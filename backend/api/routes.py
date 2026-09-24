@@ -1,3 +1,4 @@
+from typing import Optional
 from fastapi import APIRouter, File, UploadFile, Query, Response, status
 from backend.models.schemas import PredictionResponse, HealthResponse
 from backend.utils.image_validator import validate_image_file
