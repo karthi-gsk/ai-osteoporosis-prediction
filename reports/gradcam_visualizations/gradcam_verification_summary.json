@@ -1,0 +1,114 @@
+{
+  "date": "2026-09-25",
+  "model_architecture": "ResNet18",
+  "checkpoint_path": "models/checkpoints/resnet18/best_model.pth",
+  "checkpoint_best_epoch": 21,
+  "checkpoint_best_val_f1": 0.7913281873237379,
+  "target_layer": "model.layer4[-1] (BasicBlock 2)",
+  "target_layer_channels": 512,
+  "spatial_resolution": "7x7",
+  "verification_cases": [
+    {
+      "case": "Normal",
+      "filename": "N10.JPEG",
+      "original_dimensions": [
+        224,
+        224
+      ],
+      "predicted_class": "Osteopenia",
+      "ground_truth": "Normal",
+      "confidence": 0.9486,
+      "class_probabilities": {
+        "Normal": 0.0323,
+        "Osteopenia": 0.9486,
+        "Osteoporosis": 0.0191
+      },
+      "activation_shape": [
+        1,
+        512,
+        7,
+        7
+      ],
+      "gradient_shape": [
+        1,
+        512,
+        7,
+        7
+      ],
+      "cam_min": 0.0,
+      "cam_max": 0.9999998807907104,
+      "visualization_file": "gradcam_normal_N10.png",
+      "overlay_file": "overlay_normal_N10.png",
+      "checks_passed": true
+    },
+    {
+      "case": "Osteopenia",
+      "filename": "OP104.jpg",
+      "original_dimensions": [
+        224,
+        224
+      ],
+      "predicted_class": "Osteopenia",
+      "ground_truth": "Osteopenia",
+      "confidence": 0.8839,
+      "class_probabilities": {
+        "Normal": 0.0205,
+        "Osteopenia": 0.8839,
+        "Osteoporosis": 0.0957
+      },
+      "activation_shape": [
+        1,
+        512,
+        7,
+        7
+      ],
+      "gradient_shape": [
+        1,
+        512,
+        7,
+        7
+      ],
+      "cam_min": 0.0,
+      "cam_max": 0.9999998807907104,
+      "visualization_file": "gradcam_osteopenia_OP104.png",
+      "overlay_file": "overlay_osteopenia_OP104.png",
+      "checks_passed": true
+    },
+    {
+      "case": "Osteoporosis",
+      "filename": "OS19.jpg",
+      "original_dimensions": [
+        224,
+        224
+      ],
+      "predicted_class": "Osteopenia",
+      "ground_truth": "Osteoporosis",
+      "confidence": 0.9562,
+      "class_probabilities": {
+        "Normal": 0.011,
+        "Osteopenia": 0.9562,
+        "Osteoporosis": 0.0328
+      },
+      "activation_shape": [
+        1,
+        512,
+        7,
+        7
+      ],
+      "gradient_shape": [
+        1,
+        512,
+        7,
+        7
+      ],
+      "cam_min": 0.0,
+      "cam_max": 0.9999999403953552,
+      "visualization_file": "gradcam_osteoporosis_OS19.png",
+      "overlay_file": "overlay_osteoporosis_OS19.png",
+      "checks_passed": true
+    }
+  ],
+  "class_contrast_comparison": "gradcam_class_contrast_comparison.png",
+  "methodology": "Genuine Grad-CAM calculates gradients of the target class logit with respect to the feature activation maps of ResNet18 layer4[-1]. Global average pooling yields channel importance weights alpha_k. A ReLU activation is applied to the weighted combination, followed by bilinear interpolation and [0, 1] min-max normalization. Transparent alpha-blending (alpha=0.45) overlays the JET colormap onto the original X-ray.",
+  "disclaimer": "Grad-CAM heatmaps highlight image regions that strongly influenced the convolutional neural network representation for knee osteoporosis classification. They do NOT constitute medical diagnosis, anatomical segmentations of bone mineral loss, or verified DXA T-score measurements. Outputs are strictly for research and model interpretability."
+}

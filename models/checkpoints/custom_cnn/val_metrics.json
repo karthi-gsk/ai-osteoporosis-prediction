@@ -1,0 +1,63 @@
+{
+  "split": "val",
+  "loss": 0.63509,
+  "accuracy": 0.7836,
+  "macro_precision": 0.7965,
+  "macro_recall": 0.8049,
+  "macro_f1": 0.7841,
+  "per_class": {
+    "Normal": {
+      "sensitivity": 0.6275,
+      "specificity": 0.9639,
+      "support": 51,
+      "roc_auc": 0.897
+    },
+    "Osteopenia": {
+      "sensitivity": 1.0,
+      "specificity": 0.8571,
+      "support": 36,
+      "roc_auc": 0.9419
+    },
+    "Osteoporosis": {
+      "sensitivity": 0.7872,
+      "specificity": 0.8621,
+      "support": 47,
+      "roc_auc": 0.8437
+    }
+  },
+  "confusion_matrix": [
+    [
+      32,
+      7,
+      12
+    ],
+    [
+      0,
+      36,
+      0
+    ],
+    [
+      3,
+      7,
+      37
+    ]
+  ],
+  "roc_auc_macro": 0.8942,
+  "expected_calibration_error": 0.101,
+  "accuracy_ci95": [
+    0.7164,
+    0.8582
+  ],
+  "macro_f1_ci95": [
+    0.7142,
+    0.8522
+  ],
+  "macro_precision_ci95": [
+    0.7312,
+    0.8622
+  ],
+  "macro_recall_ci95": [
+    0.7468,
+    0.8655
+  ]
+}

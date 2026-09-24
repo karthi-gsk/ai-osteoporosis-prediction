@@ -1,0 +1,15 @@
+{
+  "model_name": "custom_cnn",
+  "total_epochs": 35,
+  "best_val_f1": 0.784076227390181,
+  "config": {
+    "batch_size": 16,
+    "max_epochs": 100,
+    "patience": 15,
+    "seed": 42,
+    "img_size": 224,
+    "architecture": "custom_cnn"
+  },
+  "note": "Original checkpoint trained with previous loss configuration (double-weighted class loss)",
+  "epochs": []
+}
