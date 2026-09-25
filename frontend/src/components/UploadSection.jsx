@@ -190,16 +190,16 @@ export default function UploadSection({
       }
     }
 
-    // Add clinical scan watermark & orientation
-    ctx.fillStyle = '#64748b';
-    ctx.font = '14px monospace';
-    ctx.fillText(`R - RESEARCH SPECIMEN [${sampleType.toUpperCase()}]`, 20, 35);
-    ctx.fillText('512x512 • 8-bit Gray Equiv', 20, 55);
+    // Add synthetic UI-test watermark & orientation
+    ctx.fillStyle = '#94a3b8';
+    ctx.font = '13px monospace';
+    ctx.fillText('SYNTHETIC UI-TEST PATTERN (NOT A MEDICAL X-RAY)', 20, 35);
+    ctx.fillText('512x512 • Procedural Canvas Simulation', 20, 55);
 
     canvas.toBlob((blob) => {
       const file = new File(
         [blob],
-        `sample_${sampleType}_xray_scan.jpg`,
+        `synthetic_ui_test_artifact.jpg`,
         { type: 'image/jpeg' }
       );
       validateAndSetFile(file);
@@ -214,8 +214,8 @@ export default function UploadSection({
         <span className="section-eyebrow">Input Pipeline</span>
         <h2 className="section-title">Knee Radiograph Upload</h2>
         <p className="section-subtitle">
-          Upload a knee X-ray image (AP or lateral projection) for ResNet18 deep learning inference.
-          This model was trained and validated exclusively on knee radiographs.
+          Upload an Anteroposterior (AP) knee radiograph for ResNet18 deep learning inference.
+          This model was trained and validated exclusively on AP knee radiographs; lateral views and other anatomical regions are unsupported.
         </p>
       </div>
 
@@ -285,19 +285,19 @@ export default function UploadSection({
               </button>
             </div>
 
-            {/* Quick Demo Preloader Strip — Synthetic canvas image for UI testing only */}
+            {/* Quick Demo Preloader Strip — Synthetic canvas pattern for UI testing only */}
             <div className="sample-loader-strip" onClick={(e) => e.stopPropagation()}>
-              <span className="sample-strip-label">Or load a synthetic canvas image for UI testing:</span>
+              <span className="sample-strip-label">Or load a synthetic canvas test pattern for interface demonstration:</span>
               <button 
                 type="button" 
                 className="btn-sample" 
                 onClick={() => handleLoadSample('femur')}
               >
                 <Sparkles size={14} />
-                <span>Load Synthetic Test Image</span>
+                <span>Load Synthetic Test Pattern</span>
               </button>
               <p className="sample-strip-note">
-                Note: Synthetic images are not real knee X-rays. Upload an actual knee radiograph for meaningful inference.
+                Note: Synthetic test patterns are procedurally generated for UI testing and are not real radiographs. For meaningful model evaluation, upload a real Anteroposterior (AP) knee radiograph.
               </p>
             </div>
           </div>

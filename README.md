@@ -6,6 +6,8 @@
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![React 19](https://img.shields.io/badge/React-19.0-61DAFB.svg)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite-6.0-646CFF.svg)](https://vitejs.dev/)
+[![Live Application](https://img.shields.io/badge/Live%20App-Vercel-success?style=flat&logo=vercel)](https://ai-osteoporosis-prediction.vercel.app/)
+[![Backend Health](https://img.shields.io/badge/API%20Health-Render-blue?style=flat&logo=render)](https://ai-osteoporosis-prediction-gsk.onrender.com/api/health)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 > [!IMPORTANT]
@@ -14,6 +16,12 @@
 ---
 
 ## 1. Project Overview
+
+### 🌐 Live Public Deployments
+* **Interactive Web Application**: [https://ai-osteoporosis-prediction.vercel.app/](https://ai-osteoporosis-prediction.vercel.app/)
+* **Production REST API**: [https://ai-osteoporosis-prediction-gsk.onrender.com](https://ai-osteoporosis-prediction-gsk.onrender.com)
+* **Backend Health Check**: [`https://ai-osteoporosis-prediction-gsk.onrender.com/api/health`](https://ai-osteoporosis-prediction-gsk.onrender.com/api/health)
+* **Interactive OpenAPI Docs**: [`https://ai-osteoporosis-prediction-gsk.onrender.com/docs`](https://ai-osteoporosis-prediction-gsk.onrender.com/docs)
 
 The **AI Osteoporosis Prediction System** is an open-source, full-stack deep learning research platform engineered to evaluate bone structural indicators from plain knee X-ray radiographs. Built on a frozen, benchmarked **ResNet18** convolutional backbone, the system classifies input radiographs into three research categories:
 1. **Normal Bone Density**
@@ -222,7 +230,7 @@ docker run -d -p 8000:8000 \
 
 ## 8. Academic Research & Clinical Limitations
 
-1. **Anatomical Scope**: This system was trained and evaluated **exclusively on plain knee X-ray radiographs**. It has not been validated on lumbar spine, proximal femur, or hip anatomies.
+1. **Anatomical & Projection Scope**: This system was trained and evaluated **exclusively on Anteroposterior (AP) plain knee radiographs** (Mendeley Data DOI: [10.17632/fxjm8fb6mw.2](https://data.mendeley.com/datasets/fxjm8fb6mw/2)). It does NOT support lateral knee projections, lumbar spine, hip, femoral neck, or other anatomical regions.
 2. **Not a DXA Replacement**: Dual-energy X-ray Absorptiometry (DXA) remains the clinical gold standard for measuring areal Bone Mineral Density ($g/cm^2$) and establishing diagnostic T-scores. This CNN estimates visual radiograph features and does not measure physical density.
 3. **Probabilistic Outputs**: Softmax scores represent mathematical category distribution over the training manifold, not absolute calibrated probabilities of disease prevalence.
 4. **Grad-CAM Interpretation**: Activation heatmaps denote neural network feature correlation. They do not constitute anatomical segmentations of osteoporotic lesions.

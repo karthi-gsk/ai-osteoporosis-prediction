@@ -21,7 +21,7 @@ export default function Hero({ onStartClick }) {
 
         <h1 className="hero-title">
           AI-Powered Osteoporosis <br />
-          <span className="gradient-text">Risk Analysis</span>
+          <span className="gradient-text">Knee X-ray Classification</span>
         </h1>
 
         <h2 className="hero-subtitle">

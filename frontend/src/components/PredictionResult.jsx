@@ -71,7 +71,7 @@ export default function PredictionResult({ result }) {
                 {prediction}
               </h3>
               <span className={`risk-level-badge ${getRiskBadgeClass(risk_level)}`}>
-                {risk_level} Risk
+                Model-Predicted Category
               </span>
             </div>
           </div>

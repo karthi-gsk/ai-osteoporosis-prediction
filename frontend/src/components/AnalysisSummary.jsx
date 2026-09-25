@@ -63,11 +63,11 @@ export default function AnalysisSummary({ result, imagePreviewUrl, uploadedFileN
           </span>
         </div>
 
-        {/* Risk label */}
+        {/* Classification Result */}
         <div className="summary-item">
-          <span className="summary-key">Risk Label</span>
-          <span className={`summary-val-badge ${risk_level === 'High' ? 'badge-high' : risk_level === 'Moderate' ? 'badge-mod' : 'badge-low'}`}>
-            {risk_level}
+          <span className="summary-key">Classification Result</span>
+          <span className={`summary-val-badge ${prediction === 'Osteoporosis' ? 'badge-high' : prediction === 'Osteopenia' ? 'badge-mod' : 'badge-low'}`}>
+            {prediction}
           </span>
         </div>
 
@@ -131,8 +131,8 @@ export default function AnalysisSummary({ result, imagePreviewUrl, uploadedFileN
       <div className="summary-disclaimer-row">
         <Info size={13} className="text-muted" />
         <span>
-          All values above are direct outputs of the trained ResNet18 model.
-          Softmax scores are not calibrated clinical probabilities. Risk labels are research classifications only.
+          Softmax scores are mathematical model outputs, not calibrated clinical probabilities.
+          Results represent research classifications, not clinical patient risk.
         </span>
       </div>
 

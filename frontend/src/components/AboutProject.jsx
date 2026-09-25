@@ -41,7 +41,7 @@ export default function AboutProject() {
               <strong>Architecture:</strong> ResNet18 (11.2M parameters, torchvision pretrained base)
             </li>
             <li>
-              <strong>Training Data:</strong> Knee X-ray dataset — Normal, Osteopenia, Osteoporosis
+              <strong>Training Data:</strong> Anteroposterior (AP) knee X-ray dataset — Normal, Osteopenia, Osteoporosis (Mendeley Data DOI: 10.17632/fxjm8fb6mw.2)
             </li>
             <li>
               <strong>Best Checkpoint:</strong> Epoch 21, Validation Macro F1: 0.7913
@@ -90,8 +90,8 @@ export default function AboutProject() {
             or calculate DXA T-scores from X-ray images.</strong>
           </p>
           <p>
-            The model was trained and validated exclusively on knee radiographs.
-            It has <em>not</em> been validated for hip, lumbar spine, femoral neck, or other anatomical regions.
+            The model was trained and validated exclusively on Anteroposterior (AP) knee radiographs.
+            It has <em>not</em> been validated for lateral knee projections, hip, lumbar spine, femoral neck, or other anatomical regions.
             All predictions are research demonstrations and must never be used as clinical diagnoses or medical advice.
           </p>
         </div>

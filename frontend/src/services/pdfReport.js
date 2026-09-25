@@ -260,8 +260,8 @@ export async function generatePdfReport(result, imagePreviewUrl, uploadedFileNam
   text(doc, `Model softmax score: ${confidencePct}%`, PAD + 8, y + 21, {
     size: 8, color: C.textPrimary, bold: true,
   });
-  text(doc, `(Softmax logit probability distribution output)`, PAD + 62, y + 21, {
-    size: 6.8, color: C.textMuted,
+  text(doc, `(Model softmax score — not a calibrated clinical probability)`, PAD + 56, y + 21, {
+    size: 6.5, color: C.textMuted,
   });
 
   // Right pill: Academic Research Notice (removes clinical risk badge)
